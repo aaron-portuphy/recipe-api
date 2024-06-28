@@ -41,7 +41,3 @@ export const deleteRecipe = async (req, res, next) =>{
    }
 }
 
-// Get Recipe
-export const getRecipe = async (req, res) => {
-    res.json(`Recipe with ID ${req.params.id} received`);
-}
