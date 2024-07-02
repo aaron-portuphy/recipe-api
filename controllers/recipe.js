@@ -3,8 +3,13 @@ import { RecipeModel } from "../models/recipe.js";
 // Get Recipe
 export const getRecipes = async (req, res, next) => { 
 try {
+    //Get query params
+    const {limit, skip, search} = req.query;
      //Get all recipes from database
-      const allRecipes = await RecipeModel.find();
+      const allRecipes = await RecipeModel
+      .find({name: search})
+      .limit(limit)
+      .skip(skip);
       //Return all recipes as response
       res.json('All recipes');
 } catch (error) {
