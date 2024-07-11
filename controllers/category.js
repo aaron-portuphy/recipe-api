@@ -1,5 +1,8 @@
 import { CategoryModel } from "../models/category.js";
 
+
+
+
 export const getCategories = async (req, res, next) =>{
     try {
         //Get new category to database
